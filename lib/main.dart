@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'dao/conn.dart';
 import 'view/home.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Conexao conn = Conexao();
+  conn.inicializarFirebase();
   runApp(const MyApp());
 }
 
@@ -12,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
 
